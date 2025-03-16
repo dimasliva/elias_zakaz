@@ -1,18 +1,23 @@
 function openModal(modal) {
-  modal.style.display = "block";
+  modal.style.display = "block"; // Устанавливаем стиль отображения
   setTimeout(() => {
-    modal.classList.add("show");
+    modal.classList.add("show"); // Добавляем класс для анимации
   }, 10);
 }
 
 function closeModal(modal) {
-  modal.classList.remove("show");
+  modal.classList.remove("show"); // Убираем класс для анимации
   setTimeout(() => {
-    modal.style.display = "none";
+    modal.style.display = "none"; // Скрываем модальное окно
   }, 500);
 }
 
 const modals = [
+  {
+    trigger: "modal_close",
+    modal: "modal",
+    closeButton: "closeModal",
+  },
   {
     trigger: "question_roboto",
     modal: "question_modal_robot",
@@ -34,12 +39,15 @@ modals.forEach(({ trigger, modal, closeButton }) => {
   const modalElement = document.getElementById(modal);
   const closeModalButton = document.getElementById(closeButton);
 
+  // Открытие модального окна при нажатии на триггер
   document
     .getElementById(trigger)
     .addEventListener("click", () => openModal(modalElement));
 
+  // Закрытие модального окна при нажатии на кнопку закрытия
   closeModalButton.addEventListener("click", () => closeModal(modalElement));
 
+  // Закрытие модального окна при клике вне его
   window.addEventListener("click", (event) => {
     if (event.target === modalElement) {
       closeModal(modalElement);
@@ -47,6 +55,7 @@ modals.forEach(({ trigger, modal, closeButton }) => {
   });
 });
 
+// Остальной код для перетаскивания частей робота
 const container = document.querySelector(".container_body.picture");
 const pictureParts = document.querySelectorAll(".picture_part");
 let picturePartIndex = 0;
