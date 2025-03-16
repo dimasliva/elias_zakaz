@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="modal" class="modal">
+        <div class="modal-body">
+          <div class="modal-header">
+            <span class="close-button" id="closeModal"> </span>
+          </div>
+          <div class="modal-content">
+            <p>УЗНАЙ, НАСКОЛЬКО ТЫ</p>
+            <p>ТАЛАНТЛИВ!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div
+          class="question_modal roboto"
+          id="question_modal_robot"
+          style="display: none"
+        >
+          <div class="modal-header">
+            <span class="close-button" id="questionCloseModal"></span>
+          </div>
+          <div class="question_body">
+            Перетащи детальки робота на нужное место.
+          </div>
+        </div>
+
+        <header class="header">
+          <h1 class="title">СОБЕРИ РОБОТА</h1>
+          <span class="question-mark" id="question_roboto">?</span>
+        </header>
+        <div class="container_body roboto">
+          <div class="robot_part robot_part_1"></div>
+          <div class="robot_part robot_part_2"></div>
+          <div class="robot_part robot_part_3"></div>
+          <div class="robot_part robot_part_4"></div>
+          <div class="robot_part robot_part_5"></div>
+          <div class="robot_part robot_part_6"></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="container mt-10">
+          <div class="question_modal piano" id="question_modal_piano">
+            <div class="modal-header">
+              <span class="close-button" id="pianoCloseModal"></span>
+            </div>
+            <div class="question_body">Наводи курсор на клавишу пианино.</div>
+          </div>
+          <header class="header">
+            <h1 class="title">СЫГРАЙ НА ПИАНИНО</h1>
+            <span class="question-mark" id="question_piano">?</span>
+          </header>
+          <div class="container_body piano">
+            <img src="./assets/images/контур.png" alt="" class="piano_border" />
+            <img
+              src="./assets/images/клавиша1.png"
+              alt=""
+              class="piano_key piano_key_1"
+            />
+            <img
+              src="./assets/images/клавиша2.png"
+              alt=""
+              class="piano_key piano_key_2"
+            />
+            <img
+              src="./assets/images/клавиша3.png"
+              alt=""
+              class="piano_key piano_key_3"
+            />
+            <img
+              src="./assets/images/клавиша4.png"
+              alt=""
+              class="piano_key piano_key_4"
+            />
+            <img
+              src="./assets/images/клавиша5.png"
+              alt=""
+              class="piano_key piano_key_5"
+            />
+            <img
+              src="./assets/images/клавиша6.png"
+              alt=""
+              class="piano_key piano_key_6"
+            />
+            <img
+              src="./assets/images/клавиша7.png"
+              alt=""
+              class="piano_key piano_key_7"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-10">
+        <div
+          class="question_modal picture"
+          id="question_modal_picture"
+          style="display: none"
+        >
+          <div class="modal-header">
+            <span class="close-button" id="pictureCloseModal"></span>
+          </div>
+          <div class="question_body">
+            Наводи курсор на холст до тех пор, пока не повторишь натюрморт.
+          </div>
+        </div>
+
+        <header class="header">
+          <h1 class="title">НАРИСУЙ КАРТИНУ</h1>
+          <span class="question-mark" id="question_picture">?</span>
+        </header>
+        <div class="container_body picture">
+          <img
+            src="./assets/images/тыква мал.png"
+            alt=""
+            class="picture_part picture_part_1"
+          />
+          <img
+            src="./assets/images/тыква бол.png"
+            alt=""
+            class="picture_part picture_part_2"
+          />
+          <img
+            src="./assets/images/дыня.png"
+            alt=""
+            class="picture_part picture_part_3"
+          />
+          <img
+            src="./assets/images/груша.png"
+            alt=""
+            class="picture_part picture_part_4"
+          />
+          <img
+            src="./assets/images/яблоко.png"
+            alt=""
+            class="picture_part picture_part_5"
+          />
+          <img
+            src="./assets/images/кабачок.png"
+            alt=""
+            class="picture_part picture_part_6"
+          />
+          <img
+            src="./assets/images/бидон.png"
+            alt=""
+            class="picture_part picture_part_7"
+          />
+          <img
+            src="./assets/images/кувшин.png"
+            alt=""
+            class="picture_part picture_part_8"
+          />
+        </div>
+      </div>
+
+      <div class="success_window">
+        <div class="modal-header"></div>
+        <div class="success_body">
+          МОЛОДЕЦ!!! ТЫ — МЕГА ТАЛАНТ, СУПЕР ТАЛАНТИЩЕ!!!!!!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
