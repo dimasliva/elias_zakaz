@@ -9,7 +9,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="modal" class="modal show">
+      <!-- show -->
+      <div id="modal" class="modal">
         <div class="modal-body">
           <div class="modal-header">
             <span id="modal_close"></span>
@@ -21,21 +22,19 @@
           </div>
         </div>
       </div>
-
-      <div class="container">
-        <div
-          class="question_modal roboto"
-          id="question_modal_robot"
-          style="display: none"
-        >
-          <div class="modal-header">
-            <span class="close-button" id="questionCloseModal"></span>
-          </div>
-          <div class="question_body">
-            Перетащи детальки робота на нужное место.
-          </div>
+      <div
+        class="question_modal roboto"
+        id="question_modal_robot"
+        style="display: none"
+      >
+        <div class="modal-header">
+          <span class="close-button" id="questionCloseModal"></span>
         </div>
-
+        <div class="question_body">
+          Перетащи детальки робота на нужное место.
+        </div>
+      </div>
+      <div class="container">
         <header class="header">
           <h1 class="title">СОБЕРИ РОБОТА</h1>
           <span class="question-mark" id="question_roboto">?</span>
@@ -50,14 +49,16 @@
         </div>
       </div>
 
+      <div class="question_modal piano" id="question_modal_piano">
+        <div class="modal-header">
+          <span class="close-button" id="pianoCloseModal"></span>
+        </div>
+        <div class="question_body">Наводи курсор на клавишу пианино.</div>
+      </div>
+
       <div class="right">
+        <div class="w-full"></div>
         <div class="container mt-10">
-          <div class="question_modal piano" id="question_modal_piano">
-            <div class="modal-header">
-              <span class="close-button" id="pianoCloseModal"></span>
-            </div>
-            <div class="question_body">Наводи курсор на клавишу пианино.</div>
-          </div>
           <header class="header">
             <h1 class="title">СЫГРАЙ НА ПИАНИНО</h1>
             <span class="question-mark" id="question_piano">?</span>
@@ -103,20 +104,20 @@
         </div>
       </div>
 
-      <div class="container mt-10">
-        <div
-          class="question_modal picture"
-          id="question_modal_picture"
-          style="display: none"
-        >
-          <div class="modal-header">
-            <span class="close-button" id="pictureCloseModal"></span>
-          </div>
-          <div class="question_body">
-            Наводи курсор на холст до тех пор, пока не повторишь натюрморт.
-          </div>
+      <div
+        class="question_modal picture"
+        id="question_modal_picture"
+        style="display: none"
+      >
+        <div class="modal-header">
+          <span class="close-button" id="pictureCloseModal"></span>
         </div>
+        <div class="question_body">
+          Наводи курсор на холст до тех пор, пока не повторишь натюрморт.
+        </div>
+      </div>
 
+      <div class="container mt-10">
         <header class="header">
           <h1 class="title">НАРИСУЙ КАРТИНУ</h1>
           <span class="question-mark" id="question_picture">?</span>

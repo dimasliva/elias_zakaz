@@ -1,14 +1,18 @@
 function openModal(modal) {
-  modal.style.display = "block"; // Устанавливаем стиль отображения
+  modal.style.display = "block";
   setTimeout(() => {
-    modal.classList.add("show"); // Добавляем класс для анимации
+    modal.classList.add("show");
   }, 10);
 }
 
 function closeModal(modal) {
-  modal.classList.remove("show"); // Убираем класс для анимации
+  console.log("modal.classList", modal.classList);
+  modal.classList.remove("show");
   setTimeout(() => {
-    modal.style.display = "none"; // Скрываем модальное окно
+    modal.style.display = "none";
+    if (modal.classList[0] === "modal") {
+      modal.remove();
+    }
   }, 500);
 }
 
@@ -66,24 +70,47 @@ container.addEventListener("mouseenter", () => {
     picturePartIndex++;
   }
 });
-
 const robotParts = document.querySelectorAll(".robot_part");
 const container_roboto = document.querySelector(".container_body.roboto");
 
+// Добавляем обработчики событий для mouse и touch
 robotParts.forEach((part) => {
   part.addEventListener("mousedown", startDrag);
+  part.addEventListener("touchstart", startDrag); // Для сенсорных устройств
 });
 
 function startDrag(e) {
   const part = e.target;
-  let offsetX = e.clientX - part.getBoundingClientRect().left;
-  let offsetY = e.clientY - part.getBoundingClientRect().top;
+  let offsetX, offsetY;
+
+  // Проверяем, какое событие было вызвано
+  if (e.type === "touchstart") {
+    const touch = e.touches[0];
+    offsetX = touch.clientX - part.getBoundingClientRect().left;
+    offsetY = touch.clientY - part.getBoundingClientRect().top;
+
+    // Предотвращаем дальнейшую обработку события
+    e.preventDefault();
+  } else {
+    offsetX = e.clientX - part.getBoundingClientRect().left;
+    offsetY = e.clientY - part.getBoundingClientRect().top;
+  }
 
   function dragMove(e) {
     const containerRect = container_roboto.getBoundingClientRect();
-    let newX = e.clientX - offsetX;
-    let newY = e.clientY - offsetY;
+    let newX, newY;
 
+    // Определяем координаты в зависимости от типа события
+    if (e.type === "touchmove") {
+      const touch = e.touches[0];
+      newX = touch.clientX - offsetX;
+      newY = touch.clientY - offsetY;
+    } else {
+      newX = e.clientX - offsetX;
+      newY = e.clientY - offsetY;
+    }
+
+    // Ограничиваем перемещение внутри контейнера
     if (newX < containerRect.left) newX = containerRect.left;
     if (newX + part.offsetWidth > containerRect.right)
       newX = containerRect.right - part.offsetWidth;
@@ -98,8 +125,12 @@ function startDrag(e) {
   function dragEnd() {
     document.removeEventListener("mousemove", dragMove);
     document.removeEventListener("mouseup", dragEnd);
+    document.removeEventListener("touchmove", dragMove);
+    document.removeEventListener("touchend", dragEnd);
   }
 
   document.addEventListener("mousemove", dragMove);
   document.addEventListener("mouseup", dragEnd);
+  document.addEventListener("touchmove", dragMove);
+  document.addEventListener("touchend", dragEnd);
 }
