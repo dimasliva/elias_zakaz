@@ -1,335 +1,331 @@
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./assets/fonts/SourceCodePro.ttf") format("truetype");
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
-    background-image: url("./assets/svgs/background.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 30% 0%;
-    color: #0E444F;
-
+  font-family: "Source Code Pro", sans-serif;
+  background-image: url("./assets/svgs/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30% 0%;
+  color: #0e444f;
 }
 
 .wrapper {
-    max-width: 1765px;
-    padding-top: 300px;
-    padding-bottom: 100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  max-width: 1765px;
+  padding-top: 300px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .modal {
-    display: block;
-    position: fixed;
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    opacity: 0;
-    width: 100%; 
-    height: 101%;
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    transition: all ease-in-out 0.3s;
-    pointer-events: none;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 101%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all ease-in-out 0.3s;
+  pointer-events: none;
 }
 .modal-body {
-    background-color: #fff;
-    margin: 15% auto; 
-    border: 4px solid #949494;
-    width: 80%; 
-    max-width: 800px; 
-
+  background-color: #fff;
+  margin: 15% auto;
+  border: 4px solid #949494;
+  width: 80%;
+  max-width: 800px;
 }
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center ;
-    font-size: 35px;
-    height: 380px; 
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  height: 380px;
+  gap: 10px;
 }
 
 .modal-header {
-    border-bottom: 4px solid #949494;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-
+  border-bottom: 4px solid #949494;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    border-left: 4px solid #949494;
-    height: 100%;
-    width: 50px;
-    background-image: url("./assets/svgs/close.svg");
-    background-size: 110%;
-    background-position: center;
-    cursor: pointer;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border-left: 4px solid #949494;
+  height: 100%;
+  width: 50px;
+  background-image: url("./assets/svgs/close.svg");
+  background-size: 110%;
+  background-position: center;
+  cursor: pointer;
 }
 
-.container, .success_window {
-    position: relative;
-    max-width: 739px;
-    width: 739px;
-    flex:none
+.container,
+.success_window {
+  position: relative;
+  max-width: 739px;
+  width: 739px;
+  flex: none;
 }
 .success_window {
-    font-size: 5em;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 150px;
-    border: 4px solid #949494;
-    flex:none;
-
+  font-size: 5em;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 150px;
+  border: 4px solid #949494;
+  flex: none;
 }
 .success_body {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 .mt-10 {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 .right {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .w-full {
-    width: 100%;
+  width: 100%;
 }
 .question_modal {
-    position: absolute;
-    width: 551px;
-    background-color: #fff;
-    border: 4px solid #949494;
-    z-index: 1;
-    transition: all 0.5s ease; 
-    opacity: 0;
-    
+  position: absolute;
+  width: 551px;
+  background-color: #fff;
+  border: 4px solid #949494;
+  z-index: 1;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 
 .question_modal.roboto {
-    top: 385px;
-    left: 0; 
+  top: 385px;
+  left: 0;
 }
 
 .question_modal.picture {
-    top: 2170px;
-    left: 0; 
+  top: 2170px;
+  left: 0;
 }
 
 .question_modal.piano {
-    right: 0;
-    top: 1285px;
-    opacity: 0;
+  right: 0;
+  top: 1285px;
+  opacity: 0;
 }
 .question_modal.piano.show {
-    right: -4%;
-    opacity: 1;
-    z-index: 1;
+  right: -4%;
+  opacity: 1;
+  z-index: 1;
 }
 @media (max-width: 1900px) {
-    .question_modal.piano.show {
-        right: 3%;
-    }
+  .question_modal.piano.show {
+    right: 3%;
+  }
 }
 @media (max-width: 730px) {
-.question_modal.piano {
-left: 0;
-}
-    .question_modal.piano.show {
-        left: 20%;
-    }
+  .question_modal.piano {
+    left: 0;
+  }
+  .question_modal.piano.show {
+    left: 20%;
+  }
 }
 .modal.show {
-    pointer-events: all;
-    opacity: 1;
+  pointer-events: all;
+  opacity: 1;
 }
 .question_modal.roboto.show {
-    opacity: 1;
-    left: 30%;
+  opacity: 1;
+  left: 30%;
 }
-
 
 .question_modal.picture.show {
-    opacity: 1;
-    left: 30%;
+  opacity: 1;
+  left: 30%;
 }
 .question_body {
-    font-size: 32px;
-    padding: 10px;
+  font-size: 32px;
+  padding: 10px;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 4px solid #949494;
-    border-bottom: 0px ;
-    background-color: #f5f5f5;
-    padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 4px solid #949494;
+  border-bottom: 0px;
+  background-color: #f5f5f5;
+  padding-left: 20px;
 }
 
 .title {
-    margin: 0;
-    font-size: 24px;
+  margin: 0;
+  font-size: 24px;
 }
 
 .question-mark {
-    font-size: 35px;
-    cursor: pointer;
-    border-left: 4px solid #949494;
-    width: 51px;
-    height: 51px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  font-size: 35px;
+  cursor: pointer;
+  border-left: 4px solid #949494;
+  width: 51px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container_body {
-    width: 100%;
-    height: 739px;
-    position: relative;
+  width: 100%;
+  height: 739px;
+  position: relative;
 }
 .container_body.roboto {
-    background-image: url("./assets/images/робот фон.png");
+  background-image: url("./assets/images/робот фон.png");
 }
 .container_body.piano {
-    background-image: url("./assets/images/пианино.png");
+  background-image: url("./assets/images/пианино.png");
 }
 .container_body.picture {
-    background-image: url("./assets/images/картина\ фон.png");
+  background-image: url("./assets/images/картина\ фон.png");
 }
 .robot_part {
-    cursor: grab; 
-    background-size: contain;
-    background-repeat: no-repeat;
-
+  cursor: grab;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .robot_part:active {
-    cursor: grabbing; 
+  cursor: grabbing;
 }
 .robot_part,
 .piano_key,
 .picture_part {
-    position: absolute;
-    cursor: pointer;
+  position: absolute;
+  cursor: pointer;
 }
 
-
 .robot_part_1 {
-    bottom: 5%; 
-    right: 10%; 
-    width: 86px; 
-    height: 174px; 
-    background-image: url('./assets/images/робот нога прав.png');
+  bottom: 5%;
+  right: 10%;
+  width: 86px;
+  height: 174px;
+  background-image: url("./assets/images/робот нога прав.png");
 }
 
 .robot_part_2 {
-    bottom: 10%; 
-    right: 30%;
-    width: 86px; 
-    height: 174px;
-    background-image: url('./assets/images/робот нога лев.png');
+  bottom: 10%;
+  right: 30%;
+  width: 86px;
+  height: 174px;
+  background-image: url("./assets/images/робот нога лев.png");
 }
 
 .robot_part_3 {
-    top: 1%;
-    right: 10%;
-    width: 294px; 
-    height: 279px;
-    background-image: url('./assets/images/робот голова.png');
+  top: 1%;
+  right: 10%;
+  width: 294px;
+  height: 279px;
+  background-image: url("./assets/images/робот голова.png");
 }
 
 .robot_part_4 {
-    bottom: 30%;
-    right: 10%;
-    width: 99px;
-    height: 180px; 
-    background-image: url('./assets/images/робот рука лев.png');
+  bottom: 30%;
+  right: 10%;
+  width: 99px;
+  height: 180px;
+  background-image: url("./assets/images/робот рука лев.png");
 }
 
 .robot_part_5 {
-    bottom: 40%;
-    right: 1%;
-    width: 95px; 
-    height: 177px; 
-    background-image: url('./assets/images/робот рука прав.png');
+  bottom: 40%;
+  right: 1%;
+  width: 95px;
+  height: 177px;
+  background-image: url("./assets/images/робот рука прав.png");
 }
 
 .robot_part_6 {
-    bottom: 35%;
-    right: 20%;
-    width: 159px;
-    height: 184px; 
-    background-image: url('./assets/images/робот тело.png');
+  bottom: 35%;
+  right: 20%;
+  width: 159px;
+  height: 184px;
+  background-image: url("./assets/images/робот тело.png");
 }
-.piano_key{
-    opacity: 0; 
-    transition: opacity 0.3s ease;
+.piano_key {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.piano_key:hover{
-    opacity: 1; 
+.piano_key:hover {
+  opacity: 1;
 }
 .piano_border {
-    position: absolute;
+  position: absolute;
 }
 .piano_key_1 {
-    left: 197px;
-    bottom: 105px;
+  left: 197px;
+  bottom: 105px;
 }
 .piano_key_2 {
-    left: 249px;
-    bottom: 105px;
+  left: 249px;
+  bottom: 105px;
 }
 
 .piano_key_3 {
-    left: 302px;
-    bottom: 105px;
+  left: 302px;
+  bottom: 105px;
 }
 
 .piano_key_4 {
-    left: 354px;
-    bottom: 105px;
+  left: 354px;
+  bottom: 105px;
 }
 
 .piano_key_5 {
-    left: 404px;
-    bottom: 105px;
+  left: 404px;
+  bottom: 105px;
 }
 
 .piano_key_6 {
-    left: 454px;
-    bottom: 105px;
+  left: 454px;
+  bottom: 105px;
 }
 
 .piano_key_7 {
-    left: 503px;
-    bottom: 104px;
+  left: 503px;
+  bottom: 104px;
 }
 
 .picture_part {
-    opacity: 0;
-    transition: opacity 0.5s ease; 
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .picture_part.visible {
-    opacity: 1; 
+  opacity: 1;
 }
-
